@@ -1,7 +1,9 @@
+import tweepy
 from textblob import TextBlob
+import keys
 
-wiki = TextBlob("Andrew is a cool dude")
+auth = tweepy.OAuthHandler(keys.consumer_key, keys.consumer_secret)
+auth.set_access_token(access_token, access_token_secret)
 
-print(wiki.tags)
-print(wiki.words)
-print(wiki.sentiment.polarity)
+api = tweepy.API(auth)
+
